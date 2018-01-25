@@ -21,20 +21,20 @@ $(function(){
     // });
 
     // Get user_timeline
-    $.ajax({
-        url: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=vgscreenfeed&count=200&exclude_replies=true&include_rts=false",
-        async: true,
-        crossDomain: true,
-        method: "GET",
-        dataType: "json",
-        headers: {
-            "Authorization":"Bearer " + bearerToken
-        }
-    }).done(function(response){
-        // console.log(response);
-    });
+    // $.ajax({
+    //     url: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=vgscreenfeed&count=200&exclude_replies=true&include_rts=false",
+    //     async: true,
+    //     crossDomain: true,
+    //     method: "GET",
+    //     dataType: "json",
+    //     headers: {
+    //         "Authorization":"Bearer " + bearerToken
+    //     }
+    // }).done(function(response){
+    //     // console.log(response);
+    // });
 
-    var response = [
+    var res = [
         {
             "created_at": "Sun Nov 19 17:31:03 +0000 2017",
             "id": 932300197987745793,
@@ -8187,6 +8187,13 @@ $(function(){
         }
     ]
 
-    console.log(response);
-    console.log(response[0]);
+    console.log(res);
+    console.log(res[0]);
+
+	for (var i = 0; i < res.length; i++) {
+		var url = res[i].entities.media[0].media_url;
+		console.log(url);
+
+		$(".gallery").append("<div class='item'><img src='"+ url +"' alt=''></div>");
+	}
 });
