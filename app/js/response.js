@@ -34,7 +34,7 @@ $(function(){
     //     // console.log(response);
     // });
 
-    var res = [
+     var res = [
         {
             "created_at": "Sun Nov 19 17:31:03 +0000 2017",
             "id": 932300197987745793,
@@ -8192,7 +8192,6 @@ $(function(){
 
 	for (var i = 0; i < res.length; i++) {
 		var url = res[i].entities.media[0].media_url;
-		console.log(url);
 
 		$(".gallery").append("<div class='item'><img src='"+ url +"' alt=''></div>");
 	}

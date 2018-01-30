@@ -28,6 +28,7 @@ body {
 	header {
 		nav {
 			// #C9AE4B
+			z-index: 999;
 			background-color: #12161B;
 			color: white;
 			position: fixed;
@@ -82,7 +83,7 @@ body {
 
 		.shadow {
 			z-index: 99;
-			position: absolute;
+			position: fixed;
 			width: 100%;
 			height: 100%;
 			opacity: 0;
@@ -108,11 +109,18 @@ body {
 			}
 
 			.gallery {
+				position: relative;
+
 				.imgFocus {
 					border: 1px solid black;
-					position: absolute;
+					z-index: 999;
+					position: fixed;
+					top: 50%;
+				    left: calc(50% + 45px);
+					transform: translate(-50%, -50%);
 					width: auto;
 					height: auto;
+					transition: .4s;
 				}
 				.item {
 					cursor: pointer;

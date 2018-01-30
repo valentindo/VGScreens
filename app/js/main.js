@@ -1,11 +1,18 @@
 $(function(){
-	console.log('Ready');
+
+	console.log($(".item"));
 
 	//Burger Menu
-	$(".burger-menu").click(function(){
+	$(".burger-menu").click(function() {
 		$("nav").toggleClass("active-menu");
 		$("main").toggleClass("push-content");
 		$(".shadow").toggleClass("shadow-active");
-		// $("main").css("margin-left", "300px");
+		$(".imgFocus").toggleClass("push-content");
+	});
+
+	//Focus on image
+	$(".item").click(function() {
+		console.log("hi");
+		// var focusUrl = $(this);
 	});
 });
