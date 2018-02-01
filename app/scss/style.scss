@@ -2,7 +2,7 @@ html, body{
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
-	// overflow: hidden;
+	overflow-X: hidden;
 }
 body{
 	min-height: 100%;
@@ -22,6 +22,7 @@ a {
 
 .hide {
 	display: none;
+	transition: .4s;
 }
 
 body {
@@ -74,14 +75,16 @@ body {
 	}
 
 	main {
-		background-image: url("../img/dust_scratches.png");
+		position: relative;
+		background-image: url("../img/playstation-pattern.png");
 		text-align: center;
 		width: auto;
 		height: auto;
 		padding-left: 90px;
-		transition: .4s;
+		transition: transform .4s;
+		transform-origin: top right;
 
-		.shadow {
+		.shadow, .shadowFocus {
 			z-index: 99;
 			position: fixed;
 			width: 100%;
@@ -94,7 +97,7 @@ body {
 		}
 
 		.shadow-active {
-			opacity: .5;
+			opacity: .7;
 			visibility: visible;
 		}
 
@@ -112,15 +115,45 @@ body {
 				position: relative;
 
 				.imgFocus {
-					border: 1px solid black;
+					border: 2px solid #C9AE4B;
 					z-index: 999;
 					position: fixed;
+					visibility: hidden;
 					top: 50%;
 				    left: calc(50% + 45px);
 					transform: translate(-50%, -50%);
 					width: auto;
 					height: auto;
 					transition: .4s;
+					opacity: 0;
+
+					.closeButton {
+						cursor: pointer;
+						z-index: 9999;
+						position: absolute;
+					    background-color: #d7d9dd;
+						transform: rotate(45deg);
+					    height: 30px;
+					    width: 4px;
+					    top: -35px;
+					    right: 9px;
+					}
+					.closeButton:after {
+						background-color: #d7d9dd;
+					    content: "";
+					    height: 4px;
+					    left: -13px;
+					    position: absolute;
+					    top: 13px;
+					    width: 30px;
+					}
+					.closeButton:hover, .closeButton:hover:after {
+						background-color: #C9AE4B;
+					}
+				}
+				.focus-active {
+					opacity: 1;
+					visibility: visible;
 				}
 				.item {
 					cursor: pointer;
@@ -137,8 +170,8 @@ body {
 			}
 		}
 	}
-
 	.push-content {
-		margin-left: 300px;
+		margin-left: 18px;
+		transform: scale(.9);
 	}
 }
