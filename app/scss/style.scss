@@ -20,9 +20,23 @@ a {
 	display: none;
 }
 
+// General
 .hide {
 	display: none;
 	transition: .4s;
+}
+
+// Slider Arrows + Close Button
+.closeButton span, .arrows span, .arrows span {
+	z-index: 999;
+	cursor: pointer;
+	position: absolute;
+	opacity: 0;
+	width: 40px;
+	height: 40px;
+	top: -5px;
+	left: -18px;
+	transform: rotate(45deg);
 }
 
 body {
@@ -127,15 +141,39 @@ body {
 					transition: .4s;
 					opacity: 0;
 
+					i {
+						position: absolute;
+						border: solid white;
+						border-width: 0 3px 3px 0;
+						display: inline-block;
+						padding: 10px;
+						top: 50%;
+					}
+					.arrows {
+						span {
+							top: -5px;
+							left: -5px;
+						}
+					}
+					.arrows:hover {
+						color: #C9AE4B;
+					}
+					.left-arrow {
+						left: 0;
+						transform: translate(-125%, -50%)rotate(135deg);
+					}
+					.right-arrow {
+						right: 0;
+						transform: translate(125%, -50%)rotate(-45deg);
+					}
 					.closeButton {
 						cursor: pointer;
-						z-index: 9999;
 						position: absolute;
 					    background-color: #d7d9dd;
 						transform: rotate(45deg);
 					    height: 30px;
 					    width: 4px;
-					    top: -35px;
+					    top: -40px;
 					    right: 9px;
 					}
 					.closeButton:after {

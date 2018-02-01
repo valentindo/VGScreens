@@ -8196,6 +8196,9 @@ $(function(){
 	}
 
 	// EVENTS
+	// Global Variables
+	var current;
+	var currentUrl;
 
 	// Burger Menu
 	$(".burger-menu").click(function() {
@@ -8207,10 +8210,25 @@ $(function(){
 
 	// Focus on image
 	$(".item").click(function() {
-		var focusUrl = $(this).find("img").attr("src");
-		$(".imgFocus img").attr("src", focusUrl);
+		current = $(this);
+		currentUrl = $(this).find("img").attr("src");
+		$(".imgFocus img").attr("src", currentUrl);
 		$(".imgFocus").toggleClass("focus-active");
 		$(".shadowFocus").toggleClass("shadow-active");
+	});
+
+	//Previous image
+	$(".left-arrow").click(function() {
+		var prev = current.prev()[0].childNodes[0].currentSrc;
+		$(".imgFocus img").attr("src", prev);
+		current = $(".imgFocus");
+		console.log(current.prev());
+	});
+
+	//Next image
+	$(".right-arrow").click(function() {
+		var next = current.next()[0].childNodes[0].currentSrc;
+		$(".imgFocus img").attr("src", next);
 	});
 
 	// Stop focus
