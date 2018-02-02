@@ -8190,6 +8190,7 @@ $(function(){
     console.log(res);
     console.log(res[0]);
 
+	// Display Twitter Images in Gallery
 	for (var i = 0; i < res.length; i++) {
 		var url = res[i].entities.media[0].media_url;
 		$(".gallery").append("<div class='item'><img src='"+ url +"' alt=''></div>");
@@ -8220,15 +8221,22 @@ $(function(){
 	//Previous image
 	$(".left-arrow").click(function() {
 		var prev = current.prev()[0].childNodes[0].currentSrc;
-		$(".imgFocus img").attr("src", prev);
-		current = $(".imgFocus");
-		console.log(current.prev());
+		$(".imgFocus img").fadeOut(200, function() {
+			$(".imgFocus img").attr("src", prev);
+			$(".imgFocus img").fadeIn(200);
+		});
+		current = current.prev();
+		// console.log(current);
 	});
 
 	//Next image
 	$(".right-arrow").click(function() {
 		var next = current.next()[0].childNodes[0].currentSrc;
-		$(".imgFocus img").attr("src", next);
+		$(".imgFocus img").fadeOut(200, function() {
+			$(".imgFocus img").attr("src", next);
+			$(".imgFocus img").fadeIn(200);
+		});
+		current = current.next();
 	});
 
 	// Stop focus
