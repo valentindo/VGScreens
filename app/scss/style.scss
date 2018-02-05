@@ -5,6 +5,8 @@ html, body{
 	overflow-X: hidden;
 }
 body{
+	position: relative;
+	background-image: url("../img/playstation-pattern.png");
 	min-height: 100%;
 	// font-family: "arial", "sans-serif";
 	font-family: 'Roboto', sans-serif;
@@ -48,21 +50,23 @@ body {
 			color: white;
 			position: fixed;
 			left: 0;
-			width: 300px;
+			width: 230px;
 			height: 100%;
 			text-align: left;
-			transform: translateX(-70%);
+			transform: translateX(-66%);
 			transition: .4s;
 			border-right: 2px solid #C9AE4B;
 
 			a {
 				display: inline-block;
-				position: relative;
+				position: absolute;
 			    padding: 20px 15px;
+				top: 0;
 
 				h1 {
 					margin: 0;
 					color: white;
+					font-size: 1.5em;
 				}
 			}
 			.burger-menu {
@@ -75,11 +79,11 @@ body {
 					border: 1px solid #C9AE4B;
 					display: block;
 					background-color: white;
-					width: 55px;
-					height: 8px;
+					width: 40px;
+					height: 5px;
 				}
 				span:nth-of-type(2) {
-					margin: 10px 0;
+					margin: 7px 0;
 				}
 			}
 		}
@@ -90,7 +94,6 @@ body {
 
 	main {
 		position: relative;
-		background-image: url("../img/playstation-pattern.png");
 		text-align: center;
 		width: auto;
 		height: auto;
@@ -210,7 +213,7 @@ body {
 		}
 	}
 	.push-content {
-		margin-left: 18px;
-		transform: scale(.9);
+		// margin-left: -30px;
+		transform: scale(.92);
 	}
 }
